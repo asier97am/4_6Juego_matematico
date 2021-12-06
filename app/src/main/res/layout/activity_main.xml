@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    tools:context=".MainActivity"
+    android:background="@color/white"
+    android:id="@+id/layout">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="30dp"
+            android:layout_weight="1">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="16dp">
+
+                <Button
+                    android:id="@+id/btAleatorio"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="btAleatorio"
+                    android:text="NºAleatorio" />
+
+                <TextView
+                    android:id="@+id/tvAlea"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:hint="1900-2500"
+                    android:text=""/>
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="16dp">
+
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="¿Este año es bisiesto?"
+                    android:textStyle="bold"
+                    android:textSize="16sp" />
+            </TableRow>
+
+            <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="16dp">
+            <RadioGroup>
+                <RadioButton
+                    android:id="@+id/rbsi"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="onRadioButtonClicked"
+                    android:text="SI" />
+
+                <RadioButton
+                    android:id="@+id/rbno"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="onRadioButtonClicked"
+                    android:text="NO" />
+            </RadioGroup>
+
+            </TableRow>
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="16dp">
+
+                <Button
+                    android:id="@+id/btcomprobar"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="btcomprobar"
+                    android:text="Comprobar" />
+
+                <TextView
+                    android:id="@+id/tvComprobacion"
+                    android:layout_width="200dp"
+                    android:layout_height="50dp"
+                    android:gravity="center"
+                    android:hint="Comprobación"
+                    android:text="" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="16dp">
+
+
+                <Switch
+                    android:id="@+id/switchYellow"
+                    android:layout_width="match_parent"
+                    android:layout_height="49dp"
+                    android:text="Fondo Amarillo"
+                    android:onClick="switchYellow"/>
+
+                <ToggleButton
+                    android:id="@+id/toggleButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:onClick="toggleButton"/>
+            </TableRow>
+
+
+
+        </TableLayout>
+    </ScrollView>
+
+</LinearLayout>
