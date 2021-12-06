@@ -80,6 +80,7 @@ public class MainActivity extends AppCompatActivity {
 //  Comprobamos que el numero de TEXTVIEW(tvAlea) es bisiesto o no
     public void btcomprobar(View view) {
 
+
         //almaceno en variable INT aleatorio el valor de tvAlea que es donde ya sacamos el valor Aleatorio
         int aleatorio = Integer.parseInt(String.valueOf(tvAlea.getText()));
         //Con esta variable comprobaremos si es aleatorio o no
@@ -91,35 +92,43 @@ public class MainActivity extends AppCompatActivity {
         else
             correcto = false;
 
-        //IF radio "SI" esta checked haz lo siguiente
-        if(rbsi.isChecked()){
-            //if Aleatorio es TRUE(es bisiesto) imprime acerte era bisiesto
-            if(correcto==true){
-                tvComprobacion.setText("Muy bien, Acertaste que el número: " + aleatorio + " era BISIESTO");
-                tvComprobacion.setTextColor(Color.GREEN);
+        if(tvAlea.getText().equals("0")){
+            Toast.makeText(this, "Debe GENERAR UN NUMERO ALEATORIO antes", Toast.LENGTH_SHORT).show();
+        }else{
+            //IF radio "SI" esta checked haz lo siguiente
+            if(rbsi.isChecked()){
+                //if Aleatorio es TRUE(es bisiesto) imprime acerte era bisiesto
+                if(correcto==true){
+                    tvComprobacion.setText("Muy bien, Acertaste que el número: " + aleatorio + " era BISIESTO");
+                    tvComprobacion.setTextColor(Color.GREEN);
+                }
+                //if Aleatorio es FALSE(NO es bisiesto) imprime MAL era bisiesto
+                else{
+                    tvComprobacion.setText("MAL, el número: " + aleatorio + " NO ES BISIESTO ");
+                    tvComprobacion.setTextColor(Color.RED);
+                }
             }
-            //if Aleatorio es FALSE(NO es bisiesto) imprime MAL era bisiesto
-            else{
-                tvComprobacion.setText("MAL, el número: " + aleatorio + " NO ES BISIESTO ");
-                tvComprobacion.setTextColor(Color.RED);
+            //IF radio "NO" esta checked haz lo siguiente
+            else if(rbno.isChecked()){
+                //if Aleatorio es FALSE(NO es bisiesto) imprime ACERTE  NO era bisiesto
+                if(correcto==false){
+                    tvComprobacion.setText("Muy bien, Acertaste que el número: " + aleatorio + " NO era BISIESTO");
+                    tvComprobacion.setTextColor(Color.GREEN);
+                }
+                //if Aleatorio es TRUE(SI es bisiesto) imprime MAL  SI era bisiesto
+                else{
+                    tvComprobacion.setText("MAL, el número: " + aleatorio + " SI ES BISIESTO ");
+                    tvComprobacion.setTextColor(Color.RED);
+                }
+            }
+            //si ningun radio button esta checcked muestra el toast
+            else if(!rbsi.isChecked() && !rbno.isChecked()){
+                Toast.makeText(this, "Debe escoger una de las opciones", Toast.LENGTH_SHORT).show();
             }
         }
-        //IF radio "NO" esta checked haz lo siguiente
-        else if(rbno.isChecked()){
-            //if Aleatorio es FALSE(NO es bisiesto) imprime ACERTE  NO era bisiesto
-            if(correcto==false){
-                tvComprobacion.setText("Muy bien, Acertaste que el número: " + aleatorio + " NO era BISIESTO");
-                tvComprobacion.setTextColor(Color.GREEN);
-            }
-            //if Aleatorio es TRUE(SI es bisiesto) imprime MAL  SI era bisiesto
-            else{
-                tvComprobacion.setText("MAL, el número: " + aleatorio + " SI ES BISIESTO ");
-                tvComprobacion.setTextColor(Color.RED);
-            }
-        }
-        else if(!rbsi.isChecked() && !rbno.isChecked()){
-            Toast.makeText(this, "Debe escoger una de las opciones", Toast.LENGTH_SHORT).show();
-        }
+
+
+
     }
 
     //SWITCH

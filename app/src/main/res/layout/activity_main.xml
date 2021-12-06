@@ -30,17 +30,16 @@
                     android:id="@+id/btAleatorio"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
                     android:onClick="btAleatorio"
                     android:text="NºAleatorio" />
 
                 <TextView
                     android:id="@+id/tvAlea"
                     android:layout_width="200dp"
-                    android:layout_height="wrap_content"
+                    android:layout_height="70dp"
                     android:gravity="center"
-                    android:hint="1900-2500"
-                    android:text=""/>
+                    android:text="0"
+                    android:textSize="20sp"/>
 
             </TableRow>
 
@@ -94,11 +93,12 @@
 
                 <TextView
                     android:id="@+id/tvComprobacion"
-                    android:layout_width="200dp"
-                    android:layout_height="50dp"
+                    android:layout_width="220dp"
+                    android:layout_height="70dp"
                     android:gravity="center"
                     android:hint="Comprobación"
-                    android:text="" />
+                    android:text=""
+                    android:textSize="20sp"/>
             </TableRow>
 
             <TableRow
